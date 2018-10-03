@@ -23,7 +23,7 @@ request.open('GET', searchUrl, true);
        // console.log(typeof stuff);
        // console.log(stuff.data.children[0].data.title);
        let investigate = stuff.data.children;
-        Object.keys(investigate).map(i => console.log(investigate[i].data.title));
+       // Object.keys(investigate).map(i => console.log(investigate[i].data.title));
 
         Object.keys(investigate).map(i => {
              // Create a div with a card class
@@ -35,9 +35,17 @@ request.open('GET', searchUrl, true);
 
             // Create a p and set the text content to the article's description
             const p = document.createElement('p');
+            const aTag = document.createElement('a');
             //movie.description = movie.description.substring(0, 300); // Limit to 300 chars
-            let description = "desc and link coming soon";
-            p.textContent = `${description}...`; // End with an ellipses
+            let description = "description coming soon";
+            let articleLink = investigate[i].data.url;
+
+           // Object.keys(investigate).map(i => console.log(investigate[i].data.selftext_html));
+            aTag.setAttribute('href', articleLink);
+            aTag.setAttribute('target', '_blank');
+           // p.textContent = `${description}...`; // End with an ellipses
+            aTag.innerText = `${description}...`; // End with an ellipses
+            p.appendChild(aTag);
 
             // Append the cards to the container element
              container.appendChild(card);
