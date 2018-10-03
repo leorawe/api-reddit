@@ -1,5 +1,6 @@
 const app = document.getElementById('root');
 const container = document.createElement('div');
+const searchUrl = 'https://www.reddit.com/r/php/search.json?q=drupal';
 container.setAttribute('class', 'container');
 app.appendChild(container);
 
@@ -7,7 +8,8 @@ app.appendChild(container);
 var request = new XMLHttpRequest();
 
 // Open a new connection, using the GET request on the URL endpoint
-request.open('GET', 'https://www.reddit.com/r/php/search.json?q=drupal', true);
+//request.open('GET', 'https://www.reddit.com/r/php/search.json?q=drupal', true);
+request.open('GET', searchUrl, true);
 
     request.onload = function () 
   // Begin accessing JSON data here
