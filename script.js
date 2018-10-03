@@ -30,8 +30,8 @@ request.open('GET', searchUrl, true);
              const card = document.createElement('div');
             card.setAttribute('class', 'card');
             // Create an h1 and set the text content to the article's title
-            const h1 = document.createElement('h1');
-            h1.textContent = investigate[i].data.title;
+            const head = document.createElement('h2');
+            head.textContent = investigate[i].data.title;
 
             // Create a p and set the text content to the article's description
             const p = document.createElement('p');
@@ -43,7 +43,7 @@ request.open('GET', searchUrl, true);
              container.appendChild(card);
 
             // Each card will contain an h1 and a p
-            card.appendChild(h1);
+            card.appendChild(head);
             card.appendChild(p);
         });
 
