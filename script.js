@@ -37,8 +37,9 @@ request.open('GET', searchUrl, true);
             const p = document.createElement('p');
             const aTag = document.createElement('a');
             //movie.description = movie.description.substring(0, 300); // Limit to 300 chars
-            let description = "description coming soon";
+            
             let articleLink = investigate[i].data.url;
+            let description = articleLink;
 
            // Object.keys(investigate).map(i => console.log(investigate[i].data.selftext_html));
             aTag.setAttribute('href', articleLink);
